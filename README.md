@@ -45,48 +45,6 @@ Upload the code (7segment.ino for Arduino) to your board.
 
 Open Serial Monitor (if using dynamic input) or the display will automatically show numbers.
 
-Example Code (Arduino)
-const int a = 2;
-const int b = 3;
-const int c = 4;
-const int d = 5;
-const int e = 6;
-const int f = 7;
-const int g = 8;
-
-int digits[10][7] = {
-  {1,1,1,1,1,1,0}, // 0
-  {0,1,1,0,0,0,0}, // 1
-  {1,1,0,1,1,0,1}, // 2
-  {1,1,1,1,0,0,1}, // 3
-  {0,1,1,0,0,1,1}, // 4
-  {1,0,1,1,0,1,1}, // 5
-  {1,0,1,1,1,1,1}, // 6
-  {1,1,1,0,0,0,0}, // 7
-  {1,1,1,1,1,1,1}, // 8
-  {1,1,1,1,0,1,1}  // 9
-};
-
-int segPins[7] = {a,b,c,d,e,f,g};
-
-void setup() {
-  for(int i=0;i<7;i++){
-    pinMode(segPins[i], OUTPUT);
-  }
-}
-
-void displayDigit(int num){
-  for(int i=0;i<7;i++){
-    digitalWrite(segPins[i], digits[num][i]);
-  }
-}
-
-void loop() {
-  for(int i=0;i<10;i++){
-    displayDigit(i);
-    delay(1000);
-  }
-}
 
 Notes
 
